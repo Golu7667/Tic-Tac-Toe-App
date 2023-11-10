@@ -1,6 +1,6 @@
-"use client"
+"use client";
 
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const Home = () => {
   const [board, setBoard] = useState(Array(9).fill(null)); // Represents the tic-tac-toe board
@@ -12,7 +12,7 @@ const Home = () => {
     if (newBoard[index] || calculateWinner(newBoard)) {
       return;
     }
-    newBoard[index] = xIsNext ? 'X' : 'O';
+    newBoard[index] = xIsNext ? "X" : "O";
     setBoard(newBoard);
     setXIsNext(!xIsNext);
   };
@@ -21,6 +21,7 @@ const Home = () => {
     return (
       <button className="square" onClick={() => handleClick(index)}>
         {board[index]}
+        button
       </button>
     );
   };
@@ -38,7 +39,11 @@ const Home = () => {
     ];
     for (let i = 0; i < lines.length; i++) {
       const [a, b, c] = lines[i];
-      if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
+      if (
+        squares[a] &&
+        squares[a] === squares[b] &&
+        squares[a] === squares[c]
+      ) {
         return squares[a];
       }
     }
@@ -51,26 +56,27 @@ const Home = () => {
   if (winner) {
     status = `Winner: ${winner}`;
   } else {
-    status = `Next player: ${xIsNext ? 'X' : 'O'}`;
+    status = `Next player: ${xIsNext ? "X" : "O"}`;
   }
 
   return (
-    <div>
+    <div className="w-100vw h-100vh grid justify-center items-center">
       <div className="status">{status}</div>
-      <div className="board-row">
-        {renderSquare(0)}
-        {renderSquare(1)}
-        {renderSquare(2)}
+      <div className="board-row" style={{ display: "flex" }}>
+        <div className="w-16 h-16 bg-white border-2 flex justify-center items-center">{renderSquare(0)}</div>
+        <div className="w-16 h-16 bg-white border-2">{renderSquare(1)}</div>
+        <div className="w-16 h-16 bg-white border-2">{renderSquare(2)}</div>
       </div>
-      <div className="board-row">
-        {renderSquare(3)}
-        {renderSquare(4)}
-        {renderSquare(5)}
+      <div className="board-row" style={{ display: "flex" }}>
+        <div className="w-16 h-16 bg-white border-2">{renderSquare(3)}</div>
+        <div className="w-16 h-16 bg-white border-2"> {renderSquare(4)}</div>
+
+        <div className="w-16 h-16 bg-white border-2"> {renderSquare(5)}</div>
       </div>
-      <div className="board-row">
-        {renderSquare(6)}
-        {renderSquare(7)}
-        {renderSquare(8)}
+      <div className="board-row" style={{ display: "flex" }}>
+        <div className="w-16 h-16 bg-white border-2">{renderSquare(6)}</div>
+        <div className="w-16 h-16 bg-white border-2"> {renderSquare(7)}</div>
+        <div className="w-16 h-16 bg-white border-2">{renderSquare(8)}</div>
       </div>
     </div>
   );
