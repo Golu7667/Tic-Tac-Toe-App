@@ -61,8 +61,8 @@ const Home = () => {
 
   return (
     <div className="w-100vw h-100vh grid justify-center items-center mt-38">
-      <p style={{fontSize:"4rem",display:'flex',justifyContent:"center",fontFamily:'Arvo'}}>Tic Toe</p>
-      <div className="status" style={{fontSize:"2rem",width:"400px",height:"100px",display:'grid',justifyContent:'center',alignItems:'center',fontFamily:'Arvo'}}>{status}</div>
+      <p style={{fontSize:"4rem",display:'flex',justifyContent:"center",fontFamily:'Arvo',color:'gray'}}>Tic-Tac-Toe-App</p>
+      <div className="status" style={{fontSize:"2rem",width:"400px",height:"100px",display:'grid',justifyContent:'center',alignItems:'center',fontFamily:'Arvo',color:'gray',}}>{status}</div>
       <div className="board-row" style={{ display: "flex" ,gap:"12px",marginBottom:"10px"}}>
         <div className="w-32 h-16 bg-white border-2 flex justify-center items-center rounded-lg" onClick={() => handleClick(0)}>{renderSquare(0)}</div>
         <div className="w-32 h-16 bg-white border-2 flex justify-center items-center rounded-lg " onClick={() => handleClick(1)}>{renderSquare(1)}</div>
