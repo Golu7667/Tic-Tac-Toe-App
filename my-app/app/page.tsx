@@ -21,7 +21,7 @@ const Home = () => {
     return (
       <button className="square" onClick={() => handleClick(index)}>
         {board[index]}
-        button
+       
       </button>
     );
   };
@@ -60,23 +60,24 @@ const Home = () => {
   }
 
   return (
-    <div className="w-100vw h-100vh grid justify-center items-center">
-      <div className="status">{status}</div>
-      <div className="board-row" style={{ display: "flex" }}>
-        <div className="w-16 h-16 bg-white border-2 flex justify-center items-center">{renderSquare(0)}</div>
-        <div className="w-16 h-16 bg-white border-2">{renderSquare(1)}</div>
-        <div className="w-16 h-16 bg-white border-2">{renderSquare(2)}</div>
+    <div className="w-100vw h-100vh grid justify-center items-center mt-38">
+      <p style={{fontSize:"4rem",display:'flex',justifyContent:"center",fontFamily:'Arvo'}}>Tic Toe</p>
+      <div className="status" style={{fontSize:"2rem",width:"400px",height:"100px",display:'grid',justifyContent:'center',alignItems:'center',fontFamily:'Arvo'}}>{status}</div>
+      <div className="board-row" style={{ display: "flex" ,gap:"12px",marginBottom:"10px"}}>
+        <div className="w-32 h-16 bg-white border-2 flex justify-center items-center rounded-lg" onClick={() => handleClick(0)}>{renderSquare(0)}</div>
+        <div className="w-32 h-16 bg-white border-2 flex justify-center items-center rounded-lg " onClick={() => handleClick(1)}>{renderSquare(1)}</div>
+        <div className="w-32 h-16 bg-white border-2 flex justify-center items-center rounded-lg" onClick={() => handleClick(2)} >{renderSquare(2)}</div>
       </div>
-      <div className="board-row" style={{ display: "flex" }}>
-        <div className="w-16 h-16 bg-white border-2">{renderSquare(3)}</div>
-        <div className="w-16 h-16 bg-white border-2"> {renderSquare(4)}</div>
+      <div className="board-row" style={{ display: "flex",gap:"12px", marginBottom:"10px"}}>
+        <div className="w-32 h-16 bg-white border-2 flex justify-center items-center rounded-lg" onClick={() => handleClick(3)}>{renderSquare(3)}</div>
+        <div className="w-32 h-16 bg-white border-2 flex justify-center items-center rounded-lg" onClick={() => handleClick(4)}> {renderSquare(4)}</div>
 
-        <div className="w-16 h-16 bg-white border-2"> {renderSquare(5)}</div>
+        <div className="w-32 h-16 bg-white border-2 flex justify-center items-center rounded-lg" onClick={() => handleClick(5)}> {renderSquare(5)}</div>
       </div>
-      <div className="board-row" style={{ display: "flex" }}>
-        <div className="w-16 h-16 bg-white border-2">{renderSquare(6)}</div>
-        <div className="w-16 h-16 bg-white border-2"> {renderSquare(7)}</div>
-        <div className="w-16 h-16 bg-white border-2">{renderSquare(8)}</div>
+      <div className="board-row" style={{ display: "flex",gap:"12px",marginBottom:"10px" }}>
+        <div className="w-32 h-16 bg-white border-2 flex justify-center items-center rounded-lg" onClick={() => handleClick(6)}>{renderSquare(6)}</div>
+        <div className="w-32 h-16 bg-white border-2 flex justify-center items-center  rounded-lg" onClick={() => handleClick(7)}> {renderSquare(7)}</div>
+        <div className="w-32 h-16 bg-white border-2 flex justify-center items-center rounded-lg" onClick={() => handleClick(8)}>{renderSquare(8)}</div>
       </div>
     </div>
   );
